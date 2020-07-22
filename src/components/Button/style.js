@@ -14,5 +14,6 @@ export const Box = styled.div`
   background-color: ${props => props.btn === Colors.primary ? COLORS.primaryColor : COLORS.secondaryColor};
   color: ${COLORS.white};
   font-weight: ${props => props.size === Size.small ? FONT_WEIGHT.medium : FONT_WEIGHT.bold};
-  font-size: ${FONT_SIZE.small}; 
+  font-size: ${FONT_SIZE.small};
+  cursor: pointer;
 `;

@@ -55,5 +55,19 @@ export const PageContainer = styled.div`
     align-items: center;
     justify-content: space-between;
     margin: 0 -16px;
+    .right{
+      display: flex;
+    }
   }
+`;
+
+export const Icon = styled.div`
+    margin-right: 32px;
+    i{
+      &:before{
+      font-size: 24px;
+      color: ${props => props.active? COLORS.primaryColor : COLORS.white_400};
+      cursor: ${props => props.active? "pointer" : "arrow"};
+      }
+    }
 `;
