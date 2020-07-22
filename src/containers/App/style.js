@@ -11,7 +11,7 @@ export const GlobalStyle = createGlobalStyle`
       margin: 0;
       direction: rtl;
       text-align: right;
-      font-family: Number, sans-serif;
+      font-family: Vazir sans-serif;
       //min-width: 992px;
       overflow-y: auto;
     }
