@@ -5,6 +5,7 @@ export const GlobalStyle = createGlobalStyle`
       line-height: 1.15; /* 1 */
       -webkit-text-size-adjust: 100%; /* 2 */
       direction:rtl;
+      height: 100%;
       //min-width: 992px;
     }
     body {
@@ -14,6 +15,7 @@ export const GlobalStyle = createGlobalStyle`
       font-family: Vazir sans-serif;
       //min-width: 992px;
       overflow-y: auto;
+      height: 100%;
     }
     
     * {

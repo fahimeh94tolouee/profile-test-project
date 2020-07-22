@@ -7,6 +7,7 @@ export const PageContainer = styled.div`
   height: 100vh;
   //max-width: 500px;
   //margin: 0 auto;
+  
   .header{
     display: flex;
     justify-content: space-between;
@@ -44,8 +45,24 @@ export const PageContainer = styled.div`
         }
     }
   }
+  .main-part{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    align-items: stretch;
+    height: calc(100vh - 57px);
+    overflow-y: auto;
+    margin-bottom: 60px;
+    //height: calc(100vh - 100px);
+    div:nth-child(2n - 1):not(:last-of-type){
+      margin-left: 8px;
+    }
+    div{
+       margin-bottom: 8px;
+    }
+  }
   .footer{
-    position: absolute;
+    position: fixed;
     bottom: 0;
     border: 1px solid ${COLORS.white_100};
     width: 100%;
@@ -55,6 +72,8 @@ export const PageContainer = styled.div`
     align-items: center;
     justify-content: space-between;
     margin: 0 -16px;
+    background-color: ${COLORS.white};
+    z-index: 2;
     .right{
       display: flex;
     }

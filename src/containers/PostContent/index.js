@@ -6,6 +6,7 @@ import AddNew from "../../components/AddNew";
 import Button from "../../components/Button";
 import {Colors, Size} from "../../constants/styles/button";
 import Uploader from "../../components/uploader";
+import ImageBox from "../../components/ImageBox";
 
 class Index extends Component {
     constructor(props) {
@@ -32,9 +33,13 @@ class Index extends Component {
         );
     }
 
+    removePic(index){
+        let newPics = this.state.pics.filter((item, i) => i!==index);
+        this.setState({pics: newPics});
+    }
+
     render() {
         const { category, categoryList, newCategory, showNewCategoryForm, pics } = this.state;
-        console.log(pics);
         return (
             <PageContainer>
                 <div className="header">
@@ -74,6 +79,17 @@ class Index extends Component {
                     </div>
                 </div>
 
+                <div className="main-part">
+                    {
+                        pics.map((pic, i) =>{
+                            let width = "calc(50% - 4px)";
+                            if (i === pics.length - 1 && i%2 ===0){
+                                width = "100%";
+                            }
+                            return <ImageBox key={i} onClose={()=> this.removePic(i)} file={pic} width={width}/>
+                        })
+                    }
+                </div>
 
                 <div className="footer">
                     <div className="right">
