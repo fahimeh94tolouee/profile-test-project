@@ -9,9 +9,11 @@ export const Box = styled.div`
   background-repeat: no-repeat;
   border-image: initial;
   height: auto;
+  max-height: 100%;
   width: ${props => props.width};
   
   .close-button{
+    cursor: pointer;
     position: absolute;
     top: 12px;
     right: 12px;

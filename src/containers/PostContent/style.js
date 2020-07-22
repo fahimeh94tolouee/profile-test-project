@@ -11,11 +11,55 @@ export const PageContainer = styled.div`
   .header{
     display: flex;
     justify-content: space-between;
-    .right{}
+    .right{
+      img{
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+      }
+      .title{
+        font-size: ${FONT_SIZE.large};
+        font-weight: ${FONT_WEIGHT.bold};
+        margin-top: 20px;
+        color: ${COLORS.white_700};
+      }
+      input{
+        border: none;
+        font-size: ${FONT_SIZE.small};
+        margin-top: 24px;
+        color: ${COLORS.grey};
+      }
+      .post-name{
+         &::-webkit-input-placeholder {
+            color: ${COLORS.white_700};;
+          }
+
+         &::-moz-placeholder {
+            color: ${COLORS.white_700};;
+         }
+        
+         &:-ms-input-placeholder {
+            /** notice that ie has only a single colon) */
+            color: ${COLORS.white_700};;
+         }
+        
+         &::-webkit-input-placeholder {
+            color: ${COLORS.white_700};;
+         }
+
+         &::placeholder {
+            color: ${COLORS.white_700};;
+         }
+      }
+    }
     .left{
       position: relative;
       .category-container{
           width: 156px;
+          position: absolute;
+          left: 0;
+          top: 0;
+          z-index: 3;
         }
         
         .add-category{
@@ -42,6 +86,7 @@ export const PageContainer = styled.div`
           position: absolute;
           top: 0;
           left: 0;
+          z-index: 10;
         }
     }
   }
@@ -49,10 +94,11 @@ export const PageContainer = styled.div`
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-    align-items: stretch;
-    height: calc(100vh - 57px);
+    //align-items: stretch;
+    height: calc(100vh - 128px - 80px);
     overflow-y: auto;
     margin-bottom: 60px;
+    margin-top: 30px;
     //height: calc(100vh - 100px);
     div:nth-child(2n - 1):not(:last-of-type){
       margin-left: 8px;

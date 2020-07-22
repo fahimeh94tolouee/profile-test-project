@@ -10,17 +10,14 @@ const DropDown = props => {
 
     const selectItem = (item) => {
         props.onChange(item);
-        setStatus(false);
     };
 
     return (
-        <Box ref={component} status={props.show && status}>
+        <Box ref={component} status={props.show && status} onClick={e => {
+            e.stopPropagation();
+            setStatus(!status)
+        }}>
             <BoxCloseView
-                // status={status}
-                onClick={e => {
-                    e.stopPropagation();
-                    setStatus(!status)
-                }}
             >
                 <div className="selected-value">
                     {(props.value && props.value.value) || props.label}
@@ -29,7 +26,7 @@ const DropDown = props => {
             </BoxCloseView>
             <BoxOpenView status={props.show && status}>
                 <ul>
-                    {props.options.map((item)=>{
+                    {props.options.filter(item => !props.value || (item.id !== props.value.id)).map((item)=>{
                         return(<li onClick={() => selectItem(item)} key={item.id}>
                             {item.value}
                         </li>)

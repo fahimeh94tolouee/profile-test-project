@@ -1,12 +1,12 @@
 import styled from "styled-components";
-import {COLORS, FONT_SIZE} from "../../assets/styleVariables";
+import {COLORS, FONT_SIZE, FONT_WEIGHT} from "../../assets/styleVariables";
 
 export const Box = styled.div`
   width: 100%;
   height: ${props => props.status ? 'fit-content' : "31px"};
   display: flex;
   flex-direction: column;
-  padding: 12px 11.5px 12px 16px;
+  padding: 12px 4px;
   background-color: ${COLORS.white_200};
   border-radius: 15.5px;
   justify-content: center;
@@ -17,16 +17,16 @@ export const BoxCloseView = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  //cursor: pointer;
+  padding: 0 11.5px 0 16px;
   .selected-value{
     font-size: ${FONT_SIZE.small};
-    font-weight: bold;
+    font-weight: ${FONT_WEIGHT.bold};
     color: ${COLORS.grey};
   }
   .arrow{
     &:before{
       font-size: 12px;
-      font-weight: bold;
+      font-weight: ${FONT_WEIGHT.bold};
       color: ${COLORS.primaryColor};
     }
   }
@@ -34,7 +34,6 @@ export const BoxCloseView = styled.div`
 
 export const BoxOpenView = styled.div`
   display: ${props=> props.status? "flex" : "none"};
-  //cursor: pointer;
   ul{
     list-style: none;
     margin: 0;
@@ -44,8 +43,12 @@ export const BoxOpenView = styled.div`
     width: 100%;
     li{
       width: 100%;
-      padding: 8px 0;
+      padding: 8px 11.5px 8px 16px;
+      margin-top: 4px;
       font-size: ${FONT_SIZE.small};
+      &:hover{
+        box-shadow: 0 0 6px 0 #CCCCCC;;
+      }
     }
   }
 
