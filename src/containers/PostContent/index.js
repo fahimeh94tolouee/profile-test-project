@@ -1,8 +1,11 @@
 import React, { Component } from "react";
-import { PageContainer } from "./style";
+import { PageContainer, Icon } from "./style";
 import DropDown from "../../components/DropDown";
 import { categoryTypes } from "../../constants/categoryTypes";
 import AddNew from "../../components/AddNew";
+import Button from "../../components/Button";
+import {Colors, Size} from "../../constants/styles/button";
+import Uploader from "../../components/uploader";
 
 class Index extends Component {
     constructor(props) {
@@ -11,7 +14,8 @@ class Index extends Component {
             category: { id: "", value: "" },
             newCategory: "",
             categoryList: categoryTypes,
-            showNewCategoryForm: false
+            showNewCategoryForm: false,
+            pics:[]
         };
     }
 
@@ -29,7 +33,8 @@ class Index extends Component {
     }
 
     render() {
-        const { category, categoryList, newCategory, showNewCategoryForm } = this.state;
+        const { category, categoryList, newCategory, showNewCategoryForm, pics } = this.state;
+        console.log(pics);
         return (
             <PageContainer>
                 <div className="header">
@@ -70,7 +75,31 @@ class Index extends Component {
                 </div>
 
 
-                <div className="footer"></div>
+                <div className="footer">
+                    <div className="right">
+                        <Icon><i className="icon flaticon-bar-chart"/></Icon>
+                        <Icon><i className="icon flaticon-video-player"/></Icon>
+                        <label
+                            htmlFor="file"
+                        >
+                            <Icon active><i className="icon flaticon-picture"/></Icon>
+                        </label>
+                        <Uploader
+                            accept="image/png, image/jpeg, image/jpg"
+                            limit="3"
+                            files={pics}
+                            onChange={(files)=>this.setState({pics: files})}
+                        />
+                    </div>
+                    <div className="left">
+                        <Button
+                            size={Size.large}
+                            btn={Colors.primary}
+                        >
+                            انتشار
+                        </Button>
+                    </div>
+                </div>
             </PageContainer>
         );
     }
