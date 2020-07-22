@@ -6,14 +6,12 @@ export const GlobalStyle = createGlobalStyle`
       -webkit-text-size-adjust: 100%; /* 2 */
       direction:rtl;
       height: 100%;
-      //min-width: 992px;
     }
     body {
       margin: 0;
       direction: rtl;
       text-align: right;
       font-family: Vazir sans-serif;
-      //min-width: 992px;
       overflow-y: auto;
       height: 100%;
     }

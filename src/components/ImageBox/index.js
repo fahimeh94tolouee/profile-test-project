@@ -1,11 +1,13 @@
-import React from "react";
+import React, {useState} from "react";
 import {Box} from "./style";
 
 const ImageBox = props =>{
+    const {file} = props;
+    const [src] = useState(window.URL.createObjectURL(file));
       return(
         <Box
             style={{
-                backgroundImage: `url(${window.URL.createObjectURL(props.file)})`
+                backgroundImage:`url(${src})`
             }}
             width={props.width}
         >

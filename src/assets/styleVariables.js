@@ -6,6 +6,7 @@ export const COLORS = {
     white_100: "#EBEBEB",
     white_200: "#F4F4F4",
     white_400: "#DBDBDB",
+    white_700:"#BEBEBE",
 
     grey: "#4A4A4A",
     grey_400:"rgba(0,0,0,0.65)",
@@ -14,6 +15,7 @@ export const COLORS = {
 
 export const FONT_SIZE = {
     small: "12px",
+    large: "18px",
 };
 
 export const FONT_WEIGHT = {
